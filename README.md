@@ -25,7 +25,7 @@ The config is generated after the first start of the plugin.
 
 Using this plugin is quite simple since there is only one command.
 To assign usage for a certain flag edit config file.
-Located in the folder `counterstrikesharp/configs/plugins/cs2legs`
+Located in the folder `counterstrikesharp/configs/plugins/CS2Clantags`
 
 ---
 
