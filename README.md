@@ -36,7 +36,7 @@ Located in the folder `counterstrikesharp/configs/plugins/CS2Clantags`
 
   "Version": 1,
   "TAG_ON_COMMANDS": "css_tagon",
-  "TAG_OFF_COMMANDS": "css_tagsoff",
+  "TAG_OFF_COMMANDS": "css_tagoff",
   "DEFAULT_TAG": "[PLAYER]", // Make it blank if you dont want default tag
   "VIP_TAG": "[VIP]",
   "VIP_FLAG": "@css/vip",
