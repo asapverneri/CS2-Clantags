@@ -1,0 +1,8 @@
+{
+  "default.tag": "{green}[CS2Clantags] {lime}Your clantag is now {0}",
+  "vip.tag": "{green}[CS2Clantags] {lime}Your clantag is now {0}",
+  "admin.tag": "{green}[CS2Clantags] {lime}Your clantag is now {0}",
+  "headadmin.tag": "{green}[CS2Clantags] {lime}Your clantag is now {0}",
+  "owner.tag": "{green}[CS2Clantags] {lime}Your clantag is now {0}",
+  "tag.removed": "{green}[CS2Clantags] {lime}Your clantag is now removed."
+} 
