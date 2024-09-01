@@ -4,7 +4,6 @@ Extremely simple plugin to set admin/vip tag to scoreboard. It has english langu
 Tested on Windows, but should work on Linux aswell.
 
 ![GitHub tag (with filter)](https://img.shields.io/github/v/tag/asapverneri/CS2-Clantags?style=for-the-badge&label=Version)
-![GitHub last commit (branch)](https://img.shields.io/github/last-commit/asapverneri/CS2-Clantags/dev?style=for-the-badge)
 
 > [!NOTE]  
 > This plugin is in early state and it's not perfect.
