@@ -1,7 +1,6 @@
 ## 🎮 CS2 Clantags
 
 Extremely simple plugin to set admin/vip tag to scoreboard. It has english language available for now, but if you want you can translate it to any language.
-Tested on Windows, but should work on Linux aswell.
 
 ![GitHub tag (with filter)](https://img.shields.io/github/v/tag/asapverneri/CS2-Clantags?style=for-the-badge&label=Version)
 
@@ -12,7 +11,7 @@ Tested on Windows, but should work on Linux aswell.
 
 ## 📦 Installion
 > [!CAUTION]
-> CSSharp v253 required.
+> CSSharp v300 required.
 
 - Install [CounterStrike Sharp](https://github.com/roflmuffin/CounterStrikeSharp) & [Metamod:Source](https://www.sourcemm.net/downloads.php/?branch=master)
 - Download the latest release from the releases tab and copy it into the counterstrikesharp plugins folder.
@@ -24,29 +23,32 @@ The config is generated after the first start of the plugin.
 
 Using this plugin is quite simple and straight forward.
 To edit tags, commands and permissions please edit config file.
-Located in the folder `counterstrikesharp/configs/plugins/CS2Clantags`
+Located in the folder `counterstrikesharp/configs/plugins/Clantags`
 
 **Commands**
-- !tagon - Enable scoreboard tag
-- !tagoff - Disable scoreboard tag
+- !clantag - Enable/disable clantag
 
 **Example config:**
 ```json
-
-  "Version": 1,
-  "TAG_ON_COMMANDS": "css_tagon",
-  "TAG_OFF_COMMANDS": "css_tagoff",
-  "DEFAULT_TAG": "[PLAYER]", // Make it blank if you dont want default tag
-  "VIP_TAG": "[VIP]",
-  "VIP_FLAG": "@css/vip",
-  "ADMIN_TAG": "[ADMIN]",
-  "ADMIN_FLAG": "@css/ban",
-  "HEADADMIN_TAG": "[HEAD-ADMIN]",
-  "HEADADMIN_FLAG": "@css/cheats",
-  "OWNER_TAG": "[OWNER]",
-  "OWNER_FLAG": "@css/root",
+{
+  "ToggleTagEnabled": true,
+  "ToggleTagCommand": "css_clantag",
+  "ClanTags": [
+    {
+      "SteamID64": "76561198134597930",
+      "Tag": "[SteamID64]"
+    },
+    {
+      "Flag": "@css/admin",
+      "Tag": "[Admin]"
+    },
+    {
+      "Flag": "@css/vip",
+      "Tag": "[VIP]"
+    }
+  ],
   "ConfigVersion": 1
-  
+} 
 ```
 ---
 
