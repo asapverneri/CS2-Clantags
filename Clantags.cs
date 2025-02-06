@@ -14,7 +14,7 @@ public class Clantags : BasePlugin, IPluginConfig<ClantagsConfig>
     public override string ModuleName => "Clantags";
     public override string ModuleDescription => "Set clantags using flags & steamid";
     public override string ModuleAuthor => "verneri";
-    public override string ModuleVersion => "1.1";
+    public override string ModuleVersion => "1.2";
 
     private HashSet<ulong> Tagtoggle = new HashSet<ulong>();
     public ClantagsConfig Config { get; set; } = new();
@@ -38,7 +38,6 @@ public class Clantags : BasePlugin, IPluginConfig<ClantagsConfig>
         if(player == null || !player.IsValid) return HookResult.Continue;
 
         Setclantags(player);
-        Tagtoggle.Add(player.SteamID);
 
         return HookResult.Continue;
     }
@@ -50,6 +49,12 @@ public class Clantags : BasePlugin, IPluginConfig<ClantagsConfig>
             if (!string.IsNullOrEmpty(clantag.SteamID64) && player.SteamID.ToString() == clantag.SteamID64)
             {
                 //Logger.LogInformation($"Player {player.SteamID} matches SteamID64 tag: {clantag.Tag}. Leave it.");
+                player.SetClantag(clantag.Tag);
+                break;
+            }
+            else if (!string.IsNullOrEmpty(clantag.Group) && AdminManager.PlayerInGroup(player, clantag.Group))
+            {
+                //Logger.LogInformation($"Player {player.SteamID} matches group tag: {clantag.Tag}. Leave it.");
                 player.SetClantag(clantag.Tag);
                 break;
             }
@@ -70,17 +75,15 @@ public class Clantags : BasePlugin, IPluginConfig<ClantagsConfig>
 
         if (Tagtoggle.Contains(player.SteamID))
         {
-            player.SetClantag();
+            Setclantags(player);
             Tagtoggle.Remove(player.SteamID);
-            player.PrintToChat($"{Localizer["clantag.off"]}");
-            //Logger.LogInformation($"Player {player.PlayerName} disabled clantag.");
+            player.PrintToChat($"{Localizer["clantag.on"]}");
         }
         else
         {
-            Setclantags(player);
+            player.SetClantag();
             Tagtoggle.Add(player.SteamID);
-            player.PrintToChat($"{Localizer["clantag.on"]}");
-            //Logger.LogInformation($"Player {player.PlayerName} enabled clantag.");
+            player.PrintToChat($"{Localizer["clantag.off"]}");
         }
 
     }

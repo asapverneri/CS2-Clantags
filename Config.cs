@@ -20,6 +20,11 @@ namespace Clantags
         },
         new ClanTag
         {
+            Flag = "#css/group",
+            Tag = "[Group]"
+        },
+        new ClanTag
+        {
             Flag = "@css/admin",
             Tag = "[Admin]"
         },
@@ -36,6 +41,10 @@ namespace Clantags
     {
         [JsonPropertyName("Flag")]
         public string Flag { get; set; } = string.Empty;
+
+
+        [JsonPropertyName("Group")]
+        public string Group { get; set; } = string.Empty;
 
         [JsonPropertyName("SteamID64")]
         public string SteamID64 { get; set; } = string.Empty;

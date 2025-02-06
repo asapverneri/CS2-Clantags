@@ -4,14 +4,9 @@ Extremely simple plugin to set admin/vip tag to scoreboard. It has english langu
 
 ![GitHub tag (with filter)](https://img.shields.io/github/v/tag/asapverneri/CS2-Clantags?style=for-the-badge&label=Version)
 
-> [!NOTE]  
-> This plugin is in early state and it's not perfect.
-
 ---
 
 ## 📦 Installion
-> [!CAUTION]
-> CSSharp v300 required.
 
 - Install [CounterStrike Sharp](https://github.com/roflmuffin/CounterStrikeSharp) & [Metamod:Source](https://www.sourcemm.net/downloads.php/?branch=master)
 - Download the latest release from the releases tab and copy it into the counterstrikesharp plugins folder.
@@ -37,6 +32,10 @@ Located in the folder `counterstrikesharp/configs/plugins/Clantags`
     {
       "SteamID64": "76561198134597930",
       "Tag": "[SteamID64]"
+    },
+    {
+      "Group": "#css/group",
+      "Tag": "[Group]"
     },
     {
       "Flag": "@css/admin",
