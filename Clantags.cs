@@ -14,7 +14,7 @@ public class Clantags : BasePlugin, IPluginConfig<ClantagsConfig>
     public override string ModuleName => "Clantags";
     public override string ModuleDescription => "Set clantags using flags & steamid";
     public override string ModuleAuthor => "verneri";
-    public override string ModuleVersion => "1.2";
+    public override string ModuleVersion => "1.3";
 
     private HashSet<ulong> Tagtoggle = new HashSet<ulong>();
     public ClantagsConfig Config { get; set; } = new();
@@ -69,9 +69,13 @@ public class Clantags : BasePlugin, IPluginConfig<ClantagsConfig>
 
     public void ToggleTag(CCSPlayerController? player, CommandInfo command)
     {
-        if (!player.IsPlayer())
+        if (player == null || !player.IsPlayer())
             return;
-        if (player == null) return;
+
+        if (!Config.ToggleTagEnabled) {
+            player.PrintToChat($"{Localizer["clantag.toggledisabled"]}");
+            return;
+        }
 
         if (Tagtoggle.Contains(player.SteamID))
         {

@@ -1,4 +1,5 @@
 {
   "clantag.on": "{green}[Clantags] {lime}Your clantag is now {green}shown{lime}.",
-  "clantag.off": "{green}[Clantags] {lime}Your clantag is now {red}hidden{lime}."
+  "clantag.off": "{green}[Clantags] {lime}Your clantag is now {red}hidden{lime}.",
+  "clantag.toggledisabled": "{green}[Clantags] {lime}Toggling clantags is {red}disabled{lime}."
 } 
