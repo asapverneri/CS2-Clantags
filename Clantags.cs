@@ -14,7 +14,7 @@ public class Clantags : BasePlugin, IPluginConfig<ClantagsConfig>
     public override string ModuleName => "Clantags";
     public override string ModuleDescription => "Set clantags using flags & steamid";
     public override string ModuleAuthor => "verneri";
-    public override string ModuleVersion => "1.3";
+    public override string ModuleVersion => "1.4";
 
     private HashSet<ulong> Tagtoggle = new HashSet<ulong>();
     public ClantagsConfig Config { get; set; } = new();
@@ -61,6 +61,12 @@ public class Clantags : BasePlugin, IPluginConfig<ClantagsConfig>
             else if (!string.IsNullOrEmpty(clantag.Flag) && AdminManager.PlayerHasPermissions(player, clantag.Flag))
             {
                 //Logger.LogInformation($"Player {player.SteamID} matches flag tag: {clantag.Tag}. Leave it.");
+                player.SetClantag(clantag.Tag);
+                break;
+            }
+            else if (string.IsNullOrEmpty(clantag.Flag) && string.IsNullOrEmpty(clantag.Group) && string.IsNullOrEmpty(clantag.SteamID64))
+            {
+                //Logger.LogInformation($"Player {player.SteamID} matches default tag: {clantag.Tag}. Leave it.");
                 player.SetClantag(clantag.Tag);
                 break;
             }

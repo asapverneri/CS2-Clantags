@@ -20,7 +20,7 @@ namespace Clantags
         },
         new ClanTag
         {
-            Flag = "#css/group",
+            Group = "#css/group",
             Tag = "[Group]"
         },
         new ClanTag
@@ -32,6 +32,11 @@ namespace Clantags
         {
             Flag = "@css/vip",
             Tag = "[VIP]"
+        },
+        new ClanTag
+        {
+            Flag = "",
+            Tag = "[Default]"
         }
         };
 
